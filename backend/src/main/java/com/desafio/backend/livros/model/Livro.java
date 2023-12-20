@@ -2,7 +2,15 @@ package com.desafio.backend.livros.model;
 
 import java.util.Date;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity(name = "livro")
 public class Livro {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String titulo;
     private String autor;
@@ -10,7 +18,9 @@ public class Livro {
     private String sinopse;
     private Date data_publicacao;
     private Integer avaliacao;
-
+    private Boolean excluido;
+    private Date data_excluido;
+    
     public Integer getId() {
         return id;
     }
@@ -53,6 +63,16 @@ public class Livro {
     public void setAvaliacao(Integer avaliacao) {
         this.avaliacao = avaliacao;
     }
-
-
+    public Boolean getExcluido() {
+        return excluido;
+    }
+    public void setExcluido(Boolean excluido) {
+        this.excluido = excluido;
+    }
+    public Date getData_excluido() {
+        return data_excluido;
+    }
+    public void setData_excluido(Date data_excluido) {
+        this.data_excluido = data_excluido;
+    }
 }
