@@ -1,7 +1,9 @@
+import * as H from "./header";
+
 export const Header = () => {
     return (
-        <div>
-
-        </div>
+        <H.Container>
+            <h1>Gerenciador de Livros</h1>
+        </H.Container>
     )
 }
