@@ -1,30 +1,36 @@
-import { useEffect, useState } from "react"
-import { Header } from "../../components/header"
-import * as LL from "./listaLivros"
-import { LivroType } from "../../types/livroType";
+import { useEffect, useState } from "react";
+import { Header } from "../../components/header";
 import { Livro } from "../../components/livro";
+import { LivroType } from "../../types/livroType";
+import * as LL from "./listaLivros";
 
 export const ListaLivros = () => {
     const [livros, setLivros] = useState<LivroType[] | []>([]);
 
     async function fetchLivros() {
-        const result = await fetch("http://localhost:8080/livros");
-        const data = await result.json();
-        setLivros(data);
+        try {
+            const result = await fetch("http://localhost:8080/livros");
+            const data = await result.json();
+            setLivros(data);
+        } catch (err){
+            console.log(err)
+        }
     }
 
     useEffect(()=>{
         fetchLivros();
-    },[])
+    },[]);
 
     return(
         <LL.Container>
             <Header/>
-            {livros.map((livro: LivroType)=>{
+            {livros.length < 0 ? livros.map((livro: LivroType, index: number)=>{
                 return(
-                    <Livro livro={livro}/>
+                    <Livro key={index} livro={livro}/>
                 )
-            })}
+            }) : (
+                <h1 style={{color: "red"}}>Ainda não existem livros cadastrados!</h1>
+            )}
         </LL.Container>
     )
 }

@@ -6,8 +6,12 @@ export const Container = styled.div`
     background-color: gray;
     border-bottom: 1px solid black;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
     top: 0px;
+    div{
+        display: flex;
+    }
 `

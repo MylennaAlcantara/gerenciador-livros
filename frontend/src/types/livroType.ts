@@ -1,11 +1,11 @@
 export interface LivroType {
-    id: Number,
-    titulo: String,
-    autor: String,
-    genero: String,
-    sinopse: String,
+    id: number,
+    titulo: string,
+    autor: string,
+    genero: string,
+    sinopse: string,
     data_publicacao: Date,
-    avaliacao: Number,
+    avaliacao: number,
     excluido: Boolean,
     data_excluido: Date,
 }

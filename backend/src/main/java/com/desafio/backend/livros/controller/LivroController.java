@@ -2,6 +2,7 @@ package com.desafio.backend.livros.controller;
 
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +24,7 @@ import com.desafio.backend.livros.repository.LivroRepository;
 @RequestMapping("")
 @CrossOrigin(origins = "*")
 public class LivroController {
-    private LivroRepository livroRepository;
+    @Autowired LivroRepository livroRepository;
 
     @GetMapping("/livros")
     public ArrayList<Livro> buscarLivros() {
@@ -42,11 +43,11 @@ public class LivroController {
     
     @PutMapping("/editarLivro")
     public void editarLivro(@RequestBody Livro livro) {
-        livroRepository.update(livro);
+        //livroRepository.update(livro);
     }
 
-    @DeleteMapping("/deletarLivro")
-    public void deletarLivro(@RequestBody Livro livro){
-        livroRepository.delete(livro);
+    @DeleteMapping("/deletarLivro/:id")
+    public void deletarLivro(@PathVariable Integer id){
+        livroRepository.deleteById(id);
     }
 }
