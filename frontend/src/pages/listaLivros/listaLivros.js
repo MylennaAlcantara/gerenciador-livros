@@ -5,4 +5,10 @@ export const Container = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    background-image: url("/images/livraria.jpg");
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover; 
 `
