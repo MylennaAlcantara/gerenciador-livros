@@ -13,6 +13,8 @@ export const Container = styled.div`
     .formulario{
         width: 100%;
         height: auto;
+        padding: 5px;
+        border-radius: 5px;
         display: flex;
         box-shadow: 3px 5px 5px gray;
         border: 1px solid gray;
@@ -25,6 +27,7 @@ export const Container = styled.div`
             label{
                 margin: auto 0px;
                 white-space: nowrap;
+                font-weight: bold;
             }
         }
         .campos{
@@ -36,13 +39,23 @@ export const Container = styled.div`
             textarea,
             input{
                 margin-bottom: 5px;
-                width: 100%;
+                width: 90%;
+            }
+            textarea{
+                resize:none;
+                height: 50px;
+                white-space: wrap;
             }
             input{
                 height: 24px;
+                border: none;
+                border-bottom: 1px solid blue;
             }
             input[type=number]{
                 width: 50px;
+            }
+            input[type=date]{
+                width: 100px;
             }
         }
     }
@@ -50,8 +63,10 @@ export const Container = styled.div`
     button{
         height: 24px;
         width: 100px;
+        margin-top: 20px;
         background-color: green;
         color: white;
+        border-radius: 5px;
     }
 
     button:hover{

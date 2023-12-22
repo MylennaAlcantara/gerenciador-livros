@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Header } from "../../components/header";
 import { LivroType } from "../../types/livroType";
 import * as CL from "./cadastroLivro";
 
 export const CadastroLivro = () => {
+    var idLivro = localStorage.getItem("id");
     const [livro, setLivro] = useState<LivroType>({
         id: 0,
         titulo: "",
@@ -15,6 +16,21 @@ export const CadastroLivro = () => {
         excluido: false,
         data_excluido: new Date("")
     });
+
+    useEffect(()=>{
+        async function fetchLivros() {
+            if(idLivro !== null){
+                try {
+                    const result = await fetch(`http://localhost:8080/livros/${idLivro}`);
+                    const data = await result.json();
+                    setLivro(data);
+                } catch (error) {
+                    console.log(error)
+                }
+            }
+        }
+        fetchLivros();
+    },[idLivro])
 
     async function salvar() {
         fetch("http://localhost:8080/cadastrarLivro", {
@@ -29,7 +45,7 @@ export const CadastroLivro = () => {
     return (
         <CL.Container>
             <Header />
-            <div style={{width: "80%"}}>
+            <div style={{width: "60%"}}>
                 <h1>Cadastro de Livro</h1>
                 <form action="post">
                     <div className="formulario">
