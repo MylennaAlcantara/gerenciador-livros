@@ -6,7 +6,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     form{
         width: 100%;
     }
@@ -49,7 +49,7 @@ export const Container = styled.div`
             input{
                 height: 24px;
                 border: none;
-                border-bottom: 1px solid blue;
+                border-bottom: 1px solid gray;
             }
             input[type=number]{
                 width: 50px;
@@ -60,16 +60,17 @@ export const Container = styled.div`
         }
     }
 
-    button{
+    .button-salvar{
         height: 24px;
         width: 100px;
         margin-top: 20px;
         background-color: green;
         color: white;
         border-radius: 5px;
+        border: none;
     }
 
-    button:hover{
+    .button-salvar:hover{
         cursor: pointer;
         box-shadow: 3px 5px 5px gray;
     }
