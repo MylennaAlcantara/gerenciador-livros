@@ -75,7 +75,7 @@ export const CadastroLivro = () => {
                     })
                         .then(() => {
                             alert("Atualizado com sucesso!");
-                            navigate("/livros");
+                            navigate("/");
                         })
                 } catch (error) {
                     console.log(error)

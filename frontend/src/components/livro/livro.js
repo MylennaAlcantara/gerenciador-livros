@@ -40,14 +40,23 @@ export const Container = styled.div`
         align-items: center;
         justify-content: center;
 
-        button{
-            margin: 10px;
-            height: 24px;
-            width: 100px;
+        .editar{
             background-color: orange;
             border: none;
             color: white;
         }
+        .excluir{
+            background-color: red;
+            border: none;
+            color: white;
+        }
+
+        button{
+            margin: 10px;
+            height: 24px;
+            width: 100px;
+        }
+
         button:hover{
             cursor: pointer;
             box-shadow: 3px 5px 5px gray;

@@ -8,7 +8,7 @@ export const Header = () => {
         <H.Container>
             <h1>Gerenciador de Livros</h1>
             <div>
-                <button onClick={()=> {navigate("/livros"); localStorage.clear()}}>Lista</button>
+                <button onClick={()=> {navigate("/"); localStorage.clear()}}>Lista</button>
                 <button onClick={()=> {navigate("/cadastroLivro"); localStorage.clear()}}>Cadastro</button>
             </div>
         </H.Container>

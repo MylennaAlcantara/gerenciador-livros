@@ -54,7 +54,7 @@ export const ListaLivros = () => {
             })
             .then(()=>{
                 setAberto(false);
-                navigate("/livros");
+                navigate("/");
             })
         } catch (error) {
             console.log(error);
@@ -66,7 +66,7 @@ export const ListaLivros = () => {
             <Header />
             {livros.length > 0 ? livros.map((livro: LivroType, index: number) => {
                 return (
-                    <Livro key={index} livro={livro} abrirVisualizar={() => abrirVisualizar(livro)} aberto={aberto} />
+                    <Livro key={index} livro={livro} abrirVisualizar={() => abrirVisualizar(livro)} onClickEditar={()=> abrirEditar(livro)} onClickExcluir={excluir} aberto={aberto} />
                 )
             }) : (
                 <h1 style={{ color: "red", backgroundColor: "white" }}>Ainda não existem livros cadastrados!</h1>
