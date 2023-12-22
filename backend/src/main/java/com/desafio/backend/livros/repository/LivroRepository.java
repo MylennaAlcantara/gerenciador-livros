@@ -14,7 +14,8 @@ public interface LivroRepository extends JpaRepository<Livro, Integer> {
     @Query(value = "SELECT * FROM livro WHERE titulo = :titulo AND autor = :autor AND NOT excluido", nativeQuery = true)
     public Livro findByTituloAutor(String titulo, String autor);
 
-    //public void update(Livro livro);
+    @Query(value = "SELECT * FROM livro WHERE id = :id AND NOT excluido", nativeQuery = true)
+    public Livro findLivroById(Integer id);
 
     //public void deleteBYId(Integer id);
 }
