@@ -6,6 +6,4 @@ export interface LivroType {
     sinopse: string,
     data_publicacao: Date,
     avaliacao: number,
-    excluido: Boolean,
-    data_excluido: Date,
 }
