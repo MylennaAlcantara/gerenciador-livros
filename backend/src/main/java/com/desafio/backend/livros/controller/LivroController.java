@@ -17,10 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.desafio.backend.livros.model.Livro;
 import com.desafio.backend.livros.repository.LivroRepository;
 
-
-
-
-
 @RestController
 @RequestMapping("")
 @CrossOrigin(origins = "*")

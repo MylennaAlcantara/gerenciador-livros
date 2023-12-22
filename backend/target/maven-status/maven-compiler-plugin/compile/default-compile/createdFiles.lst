@@ -1,0 +1,4 @@
+com\desafio\backend\livros\controller\LivroController.class
+com\desafio\backend\livros\repository\LivroRepository.class
+com\desafio\backend\livros\model\Livro.class
+com\desafio\backend\BackendApplication.class
