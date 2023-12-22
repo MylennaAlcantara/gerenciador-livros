@@ -2,15 +2,16 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 100%;
-    height: 10%;
-    background-color: gray;
+    height: 15%;
+    background-color: #eeeee4;
     border-bottom: 1px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: sticky;
     top: 0px;
+
     div{
         display: flex;
     }
@@ -22,11 +23,10 @@ export const Container = styled.div`
         border: none;
         border-radius: 0px;
         background-color: transparent;
-        color: white;
     }
 
     button:hover{
         cursor: pointer;
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid black;
     }
 `
