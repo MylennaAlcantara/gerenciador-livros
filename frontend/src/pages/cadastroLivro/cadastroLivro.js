@@ -7,6 +7,9 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: start;
+    .conteudo{
+        width: 60%;
+    }
     form{
         width: 100%;
     }
@@ -75,4 +78,9 @@ export const Container = styled.div`
         box-shadow: 3px 5px 5px gray;
     }
 
+    @media(max-width: 460px){
+        .conteudo{
+            width: 90%;
+        }
+    }
 `

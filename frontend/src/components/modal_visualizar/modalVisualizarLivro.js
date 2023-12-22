@@ -76,4 +76,9 @@ export const Container = styled.div`
         }
         
     }
+
+    @media(max-width: 460px){
+        width: 90%;
+        overflow: auto;
+    }
 `

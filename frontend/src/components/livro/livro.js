@@ -60,4 +60,14 @@ export const Container = styled.div`
         box-shadow: 3px 5px 5px gray;
         background-color: #eeeee4;
     }
+
+    @media(max-width: 460px){
+        width: 90%;
+        .dados-livro{{
+            .img-livro{
+                height: 50px;
+                width: 50px;
+            }
+        }
+    }
 `

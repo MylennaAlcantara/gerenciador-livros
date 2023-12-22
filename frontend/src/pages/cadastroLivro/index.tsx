@@ -91,7 +91,7 @@ export const CadastroLivro = () => {
     return (
         <CL.Container>
             <Header />
-            <div style={{ width: "60%" }}>
+            <div className="conteudo">
                 <h1>Cadastro de Livro</h1>
                 <form onSubmit={(e) => e.preventDefault()}>
                     <div className="formulario">

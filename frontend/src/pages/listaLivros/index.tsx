@@ -66,7 +66,7 @@ export const ListaLivros = () => {
             <Header />
             {livros.length > 0 ? livros.map((livro: LivroType, index: number) => {
                 return (
-                    <Livro key={index} livro={livro} onClick={() => abrirEditar(livro)} abrirVisualizar={() => abrirVisualizar(livro)} aberto={aberto} />
+                    <Livro key={index} livro={livro} abrirVisualizar={() => abrirVisualizar(livro)} aberto={aberto} />
                 )
             }) : (
                 <h1 style={{ color: "red", backgroundColor: "white" }}>Ainda não existem livros cadastrados!</h1>

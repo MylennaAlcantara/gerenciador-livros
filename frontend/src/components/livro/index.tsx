@@ -3,7 +3,6 @@ import * as L from "./livro";
 
 interface Props {
     livro: LivroType,
-    onClick: ()=> void,
     abrirVisualizar: ()=> void
     aberto: boolean
 }
@@ -34,9 +33,6 @@ export const Livro = (props: Props) => {
                         <span className="data">Data Publicação: {props.livro.data_publicacao ? dataFormatada : ""}</span>
                     </div>
                 </div>
-            </div>
-            <div className="buttons">
-                <button onClick={props.onClick}>Editar</button>
             </div>
         </L.Container>
     )
