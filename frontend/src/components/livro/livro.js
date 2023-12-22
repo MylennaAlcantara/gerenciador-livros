@@ -1,25 +1,63 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    height: 100px;
-    width: 100px;
+    margin-top: 10px;
+    padding: 10px;
+    height: auto;
+    width: 60%;
     border-radius: 5px;
     display: flex;
+    flex-direction: column;
     aling-items: center;
     justify-content: center;
-    div{
+    background-color: white;
+    border-radius: 5px;
+    border-bottom: 1px solid gray;
+    img{
+        height: 15px;
+        width: 15px;
+        margin-bottom: 0px;
+    }
+    .dados-livro{
+        height: 100%;
+        width: 100%;
+        padding: 10px;
         display: flex;
-        flex-direction: column;
-        aling-items: start;
+        align-items: start;
+        justify-content: start;
+        .img-livro{
+            width: 100px;
+            height: 100px;
+        }
         .data{
             margin: auto 5px 5px auto;
         }
     }
+    .buttons{
+        height: auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        button{
+            margin: 10px;
+            height: 24px;
+            width: 100px;
+            background-color: orange;
+            border: none;
+            color: white;
+        }
+        button:hover{
+            cursor: pointer;
+            box-shadow: 3px 5px 5px gray;
+        }
+        
+    }
 
     &&:hover{
         cursor: pointer;
-        height: 120px;
-        width: 120px;
-        box-shadown: 3px 5px 5px gray;
+        box-shadow: 3px 5px 5px gray;
+        background-color: #eeeee4;
     }
 `
