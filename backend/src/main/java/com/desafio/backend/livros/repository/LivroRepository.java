@@ -17,4 +17,6 @@ public interface LivroRepository extends JpaRepository<Livro, Integer> {
     @Query(value = "SELECT * FROM livro WHERE id = :id", nativeQuery = true)
     public Livro findLivroById(Integer id);
 
+    @Query(value = "SELECT * FROM livro ORDER BY id DESC limit 5", nativeQuery = true)
+    public ArrayList<Livro> findLivrosRecentes();
 }

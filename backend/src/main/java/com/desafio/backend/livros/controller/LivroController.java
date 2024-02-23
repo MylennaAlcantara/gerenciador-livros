@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.desafio.backend.livros.model.Livro;
 import com.desafio.backend.livros.repository.LivroRepository;
 
+
 @RestController
 @RequestMapping("")
 @CrossOrigin(origins = "*")
@@ -36,6 +37,11 @@ public class LivroController {
     @GetMapping("/{titulo}/{autor}")
     public Livro buscarLivro(@PathVariable String titulo, @PathVariable String autor) {
         return livroRepository.findByTituloAutor(titulo, autor);
+    }
+
+    @GetMapping("livros/livrosRecentes")
+    public ArrayList<Livro> livrosRecentes() {
+        return livroRepository.findLivrosRecentes();
     }
     
     @PostMapping("/cadastrarLivro")
