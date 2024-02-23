@@ -7,6 +7,7 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: start;
+    
     .conteudo{
         width: 60%;
     }
@@ -14,13 +15,20 @@ export const Container = styled.div`
         width: 100%;
     }
     .formulario{
+        margin-top: 10px;
         width: 100%;
         height: auto;
         padding: 5px;
         border-radius: 5px;
         display: flex;
-        box-shadow: 3px 5px 5px gray;
-        border: 1px solid gray;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(254,254,254);
+        h1{
+            color: #252525;
+            cursor: default;
+        }
         .labels{
             width: auto;
             display: flex;
@@ -28,6 +36,7 @@ export const Container = styled.div`
             align-items: end;
             justify-content: space-around;
             label{
+                color: #252525;
                 margin: auto 0px;
                 white-space: nowrap;
                 font-weight: bold;
@@ -43,10 +52,11 @@ export const Container = styled.div`
             input{
                 margin-bottom: 5px;
                 width: 90%;
+                background-color: transparent;
             }
             textarea{
                 resize:none;
-                height: 50px;
+                height: 24px;
                 white-space: wrap;
             }
             input{
@@ -67,7 +77,7 @@ export const Container = styled.div`
         height: 24px;
         width: 100px;
         margin-top: 20px;
-        background-color: green;
+        background-color: #fd6162;
         color: white;
         border-radius: 5px;
         border: none;

@@ -26,6 +26,10 @@ export const Container = styled.div`
     background-color: white;
     border-radius: 5px;
     border-bottom: 1px solid gray;
+    color: #252525;
+    h2{
+        color: #fd6162;
+    }
     .sinopse{
         text-align: start;
     }

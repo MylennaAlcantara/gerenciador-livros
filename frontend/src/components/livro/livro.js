@@ -5,14 +5,16 @@ export const Container = styled.div`
     padding: 10px;
     height: auto;
     width: 60%;
-    border-radius: 5px;
     display: flex;
     flex-direction: column;
-    aling-items: center;
+    align-items: center;
     justify-content: center;
     background-color: white;
-    border-radius: 5px;
     border-bottom: 1px solid gray;
+    color: #252525;
+    h2{
+        color: #fd6162;
+    }
     img{
         height: 15px;
         width: 15px;
@@ -41,7 +43,7 @@ export const Container = styled.div`
         justify-content: center;
 
         .editar{
-            background-color: orange;
+            background-color: #f4481d;
             border: none;
             color: white;
         }
@@ -68,6 +70,7 @@ export const Container = styled.div`
         cursor: pointer;
         box-shadow: 3px 5px 5px gray;
         background-color: #eeeee4;
+        border-radius: 5px;
     }
 
     @media(max-width: 460px){
