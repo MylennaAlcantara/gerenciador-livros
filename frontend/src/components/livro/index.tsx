@@ -2,6 +2,7 @@ import { LivroType } from "../../types/livroType";
 import * as L from "./livro";
 
 interface Props {
+    style: {},
     livro: LivroType,
     abrirVisualizar: ()=> void,
     onClickExcluir: ()=> void,
@@ -21,7 +22,7 @@ export const Livro = (props: Props) => {
         return `${dia}/${mes}/${ano}`;
     }
     return (
-        <L.Container onClick={props.abrirVisualizar}>
+        <L.Container onClick={props.abrirVisualizar} style={props.style}>
             <div className="dados-livro">
                 <img alt="livro" src="/icons/livro.png" className="img-livro"/>
                 <div style={{width: "100%", height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between"}}>

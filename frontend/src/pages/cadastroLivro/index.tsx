@@ -49,7 +49,7 @@ export const CadastroLivro = () => {
                     })
                         .then(() => {
                             alert("Salvo com sucesso!");
-                            navigate("/livros");
+                            navigate("/");
                         })
                 } catch (error) {
                     console.log(error)
@@ -58,7 +58,8 @@ export const CadastroLivro = () => {
                 alert('Escolha entre 0 e 5 para avaliar!')
             }
         } else {
-            alert('Preencha todos os campos!')
+            alert("Preencha todos os campos!")
+            //validarCampo();
         }
     }
 
@@ -84,45 +85,62 @@ export const CadastroLivro = () => {
                 alert('Escolha entre 0 e 5 para avaliar!')
             }
         } else {
-            alert('Preencha todos os campos!')
+            alert("Preencha todos os campos!")
+            //validarCampo();
         }
     }
+
+    /*const validarCampo = () => {
+        var inputs = Object.keys(livro);
+        console.log("1")
+        for(var i = 0; i < inputs.length; i++){
+            console.log("2");
+            var input = document.getElementsByName(inputs[i])[0].values;
+            if(input === ""){
+                console.log("3")
+                input.style.borderBottom = "2px solid red";
+            }
+        }
+    }*/
 
     return (
         <CL.Container>
             <Header />
             <div className="conteudo">
-                <h1>Cadastro de Livro</h1>
                 <form onSubmit={(e) => e.preventDefault()}>
                     <div className="formulario">
-                        <div className="labels">
-                            <label>Título:</label>
-                            <label>Autor:</label>
-                            <label>Gênero:</label>
-                            <label>Sinopse:</label>
-                            <label>Data Publicação:</label>
-                            <label>Avaliação:</label>
+                        <h1>Cadastro de Livro</h1>
+                        <div style={{display: "flex", width: "100%", height: "100%"}}>
+                            <div className="labels">
+                                <label>Título:</label>
+                                <label>Autor:</label>
+                                <label>Gênero:</label>
+                                <label>Sinopse:</label>
+                                <label>Data Publicação:</label>
+                                <label>Avaliação:</label>
+                            </div>
+                            <div className="campos">
+                                <input name="titulo" value={livro.titulo} onChange={(e) => setLivro({ ...livro, titulo: e.target.value })} />
+                                <input name="autor" value={livro.autor} onChange={(e) => setLivro({ ...livro, autor: e.target.value })} />
+                                <input name="genero" value={livro.genero} onChange={(e) => setLivro({ ...livro, genero: e.target.value })} />
+                                <textarea name="sinopse" maxLength={1000} value={livro.sinopse} onChange={(e) => setLivro({ ...livro, sinopse: e.target.value })} />
+                                <input
+                                    name="data_publicacao"
+                                    type="date"
+                                    value={livro.data_publicacao instanceof Date ? livro.data_publicacao.toISOString().split('T')[0] : ""}
+                                    onChange={(e) => {
+                                        const selectedDate = new Date(e.target.value);
+                                        setLivro({
+                                            ...livro,
+                                            data_publicacao: isNaN(selectedDate.getTime()) ? defaultDataPublicacao : selectedDate
+                                        });
+                                    }}
+                                />
+                                <input name="avaliacao" type="number" max={5} min={0} value={livro.avaliacao} onChange={(e) => setLivro({ ...livro, avaliacao: Number(e.target.value) })} />
+                            </div>
                         </div>
-                        <div className="campos">
-                            <input value={livro.titulo} onChange={(e) => setLivro({ ...livro, titulo: e.target.value })} />
-                            <input value={livro.autor} onChange={(e) => setLivro({ ...livro, autor: e.target.value })} />
-                            <input value={livro.genero} onChange={(e) => setLivro({ ...livro, genero: e.target.value })} />
-                            <textarea maxLength={1000} value={livro.sinopse} onChange={(e) => setLivro({ ...livro, sinopse: e.target.value })} />
-                            <input
-                                type="date"
-                                value={livro.data_publicacao instanceof Date ? livro.data_publicacao.toISOString().split('T')[0] : ""}
-                                onChange={(e) => {
-                                    const selectedDate = new Date(e.target.value);
-                                    setLivro({
-                                        ...livro,
-                                        data_publicacao: isNaN(selectedDate.getTime()) ? defaultDataPublicacao : selectedDate
-                                    });
-                                }}
-                            />
-                            <input type="number" max={5} min={0} value={livro.avaliacao} onChange={(e) => setLivro({ ...livro, avaliacao: Number(e.target.value) })} />
-                        </div>
+                        <button className="button-salvar" type="submit" onClick={editando ? atualizar : salvar}>Salvar</button>
                     </div>
-                    <button className="button-salvar" type="submit" onClick={editando ? atualizar : salvar}>Salvar</button>
                 </form>
             </div>
         </CL.Container>
