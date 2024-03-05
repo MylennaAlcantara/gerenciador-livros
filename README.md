@@ -1,11 +1,11 @@
 # gerenciador-livros
 Projeto realizado como desafio fullstack utilizando React e Spring Boot, nesse projeto é possivel abrir para visualizar os dados de um livro, cadastrar um novo, editar um livro, e ver a lista de livros cadastrados.
 
-![Captura de tela 2023-12-22 142737](https://github.com/MylennaAlcantara/gerenciador-livros/assets/93752575/83c55f93-77e4-49f2-9116-616fa3579eff)
+![Captura de tela 2024-03-05 111546](https://github.com/MylennaAlcantara/gerenciador-livros/assets/93752575/88edb0ce-8787-4201-8198-65b144de6174)
 
-![Captura de tela 2023-12-22 142805](https://github.com/MylennaAlcantara/gerenciador-livros/assets/93752575/11706c22-02bc-447a-8a28-13bc60b5b606)
+![Captura de tela 2024-03-05 121809](https://github.com/MylennaAlcantara/gerenciador-livros/assets/93752575/12828d76-d42e-40a7-9483-15774c717908)
 
-![Captura de tela 2023-12-22 142827](https://github.com/MylennaAlcantara/gerenciador-livros/assets/93752575/62cf1296-89f0-423e-a0b3-501fd82c65df)
+![Captura de tela 2024-03-05 111807](https://github.com/MylennaAlcantara/gerenciador-livros/assets/93752575/d199fb9a-33bb-45f7-8898-b52d69214ab4)
 
 **Requisitos**
 1- Ter instalado o Java 17 no computador.
